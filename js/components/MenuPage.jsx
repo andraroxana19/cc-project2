@@ -1,14 +1,16 @@
 // js/components/MainPage.jsx
+import Image from 'next/image';
 import {useEffect, useState} from "react";
 import React from "react";
 import Navbar from "@/js/utils/Navbar.js";
 
-export default function OrderPage() {
+
+export default function MenuPage() {
 	const [records, setRecords] = useState([]);
 
 	useEffect(() => {
 		try{
-			fetch('/api/orders', {
+			fetch('/api/records', {
 				method: 'GET',
 			})
 				.then(response => response.json())
@@ -26,7 +28,7 @@ export default function OrderPage() {
 		const id = e.target.id;
 
 		try{
-			fetch(`/api/orders?id=${id}`, {
+			fetch(`/api/records?id=${id}`, {
 				method: 'DELETE',
 			})
 				.then(response => response.json())
@@ -42,11 +44,13 @@ export default function OrderPage() {
 	console.log(records);
 
 	return (
-		<section className={"bg-white"}>
-				<h1 className={"w-[500px] mx-auto text-center text-6xl font-bold text-blue-600"}>Orders</h1>
-				<p className={"w-[1000px] mx-auto text-center mt-4 text-3xl text-blue-600"}>This is an app that showcases avalaible pizza for our restaurant.</p>
-				<div><Navbar/></div>
-
+		<section className={"bg-beige"}>
+				<h1 className={"w-[500px] mx-auto text-center text-6xl font-bold text-blue-600"}>Our Menu</h1>
+				
+				<p className={"w-[1000px] mx-auto text-center mt-4 text-3xl text-blue-600"}>see the menu</p>
+				
+			
+			<div><Navbar/></div>
 			<div className={"grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3"}>
 					{
 						records.map(record => (
@@ -55,8 +59,9 @@ export default function OrderPage() {
 							>
 								<h3 className={"mb-2 text-2xl font-bold text-red-500"}>{record.nume}</h3>
 								<h4 className={"font-normal text-red-500 "}>{record.marime }</h4>
-								<h4 className={"font-normal text-red-500 "}>{record.qty }</h4>
-								<h4 className={"font-normal text-red-500 "}>{record.contact }</h4>
+								<Image src={record.link} width={400} height={500} 
+								></Image>
+
 								<button type="button"
 								        onClick={deleteRecord}
 								        id={record._id}
