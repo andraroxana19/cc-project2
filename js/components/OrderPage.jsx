@@ -42,21 +42,21 @@ export default function OrderPage() {
 	console.log(records);
 
 	return (
-		<section className={"bg-white"}>
+		<section className={"bg-black"}>
 				<h1 className={"w-[500px] mx-auto text-center text-6xl font-bold text-blue-600"}>Orders</h1>
-				<p className={"w-[1000px] mx-auto text-center mt-4 text-3xl text-blue-600"}>This is an app that showcases avalaible pizza for our restaurant.</p>
+				<p className={"w-[1000px] mx-auto text-center mt-4 text-3xl text-blue-600"}>See your orders.</p>
 				<div><Navbar/></div>
 
-			<div className={"grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3"}>
+			<div className={"grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 "}>
 					{
 						records.map(record => (
 							<div key={record._id}
-								className={"max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow "}
+								className={"max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-r hover:from-lime-500 hover:to-yellow-500"}
 							>
-								<h3 className={"mb-2 text-2xl font-bold text-red-500"}>{record.nume}</h3>
-								<h4 className={"font-normal text-red-500 "}>{record.marime }</h4>
-								<h4 className={"font-normal text-red-500 "}>{record.qty }</h4>
-								<h4 className={"font-normal text-red-500 "}>{record.contact }</h4>
+								<h3 className={"mb-2 text-3xl font-bold text-blue-900"}>{record.nume}</h3>
+								<h4 className={"font-bold text-black "}>Size: {record.marime }</h4>
+								<h4 className={"font-bold text-black"}>Quantity: {record.qty }</h4>
+								<h4 className={"font-bold italic hover:not-italic text-blue-500 "}>Address: {record.contact }</h4>
 								<button type="button"
 								        onClick={deleteRecord}
 								        id={record._id}

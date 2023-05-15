@@ -22,17 +22,17 @@ function Navbar() {
       <ul className={active}>
         <li className="nav__item">
           <a href="/menu" className="nav__link">
-            Menu
+            MENU
           </a>
         </li>
 		<li className="nav__item">
           <a href="/insert" className="nav__link">
-            Order a pizza
+            ORDER A PIZZA
           </a>
         </li>
         <li className="nav__item">
           <a href="/order" className="nav__link">
-           Your Orders
+          YOUR ORDERS
           </a>
         </li>
       </ul>

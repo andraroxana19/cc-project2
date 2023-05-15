@@ -45,19 +45,31 @@ export default function MainPage() {
 
 	return (
 		<section className={"bg-beige"}>
-			<h1 className={"w-[500px] mx-auto text-center text-6xl font-bold text-blue-600 padding-[100px]"}>Pizza Menu App</h1>
-			<p className={"w-[1000px] mx-auto text-center mt-4 text-3xl text-blue-600"}>This is an app that showcases avalaible pizza for our restaurant.</p>
+			<h1 className={"w-[500px] mx-auto text-center mt-3 text-6xl font-bold text-blue-600 padding-[100px]"}>Pizza Menu App</h1>
+			<p className={"w-[1000px] mx-auto text-center mt-8 text-3xl text-blue-600"}>This is an app that showcases avalaible pizza for our restaurant.</p>
 			<div><Navbar/></div>
-			<Image src={"https://ottavio.ca/wp-content/uploads/2018/03/history-of-pizza.jpg"} width={400} height={500} 
-				></Image>
-			<div className={"container"}>
-					<p>The history of pizza begins in antiquity, as various ancient cultures produced basic flatbreads with several toppings. A precursor of pizza was probably the focaccia, a flatbread known to the Romans as panis focacius, to which toppings were then added. Modern pizza evolved from similar flatbread dishes in Naples, Italy, in the 18th or early 19th century.</p>
+			
+			<div className={"container text-center text-3xl font-bold text-blue-100 padding-[100px]"}>
+					<p>The history of pizza begins in antiquity, as various ancient cultures produced basic flatbreads with several toppings. 
+						A precursor of pizza was probably the focaccia, a flatbread known to the Romans as panis focacius,
+						 to which toppings were then added. Modern pizza evolved from similar flatbread dishes in Naples, Italy, in the 18th or early 19th century.</p>
 
-					<p>The word pizza was first documented in AD 997 in Gaeta and successively in different parts of Central and Southern Italy. Pizza was mainly eaten in Italy and by emigrants from there. This changed after World War II when Allied troops stationed in Italy came to enjoy pizza along with other Italian foods.</p>
+						 <p>The word pizza was first documented in AD 997 in Gaeta and successively in different parts of Central and Southern Italy. 
+						Pizza was mainly eaten in Italy and by emigrants from there. This changed after World War II 
+						when Allied troops stationed in Italy came to enjoy pizza along with other Italian foods.</p>
 					
 
 				
 			</div>
+			<div className={"container"}>
+			
+			<Image src={"https://ottavio.ca/wp-content/uploads/2018/03/history-of-pizza.jpg"} width={500} height={500} 
+				></Image>
+
+			<Image src={"https://www.historytoday.com/sites/default/files/articles/pizza.jpg"} width={300} height={400} 
+							></Image>
+			</div>
+			
 		</section>
 	)
 }
