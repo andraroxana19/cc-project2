@@ -4,7 +4,6 @@ import {useEffect, useState} from "react";
 import React from "react";
 import Navbar from "@/js/utils/Navbar.js";
 
-import MyImage from "@/public/pizza1.jpg";
 export default function MainPage() {
 	const [records, setRecords] = useState([]);
 
