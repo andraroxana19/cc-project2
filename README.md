@@ -1,38 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Introducere
 
-## Getting Started
+Aplicația „Pizza Menu App” pune la dispozitie clientilor unui restaurant de pizza meniul disponibil si posibilitatea de a comanda una chiar la ei acasa, totodata de a si vizualiza comenzile sale.
+Informațiile furnizate in aplicație se preiau din cadrul unei baze de date remote care functioneaza  in cloud, MONGODB.
+Pentru realizarea Backend-ului am folosit NextJS cu ajutorul unui server express împreuna cu un API cu care sunt realizate operațiile CRUD pe aceasta  baza de date, iar front-end-ul este realizat in React.
+Aplicatia finala a fost publicata cu ajutorul unei platforme in cloud, VERCEL.
+Descriere tehnologii cloud folosite
 
-First, run the development server:
+MONGODB API: 
+Baza de date este salvată în cloud și pentru aceasta am ales MONGODB. 
+Cu ajutorul ei clienții pot adăuga pizza în comanda lor într-o colecție pe care o putem accesa ulterior pentru a obține detaliile comenzilor. Este facilitata, de asemenea ștergerea unei comenzi din baza de date în cazul în care clienților dorește asta.
+Aceleași posibilități sunt furnizate și pentru vizualizarea meniului disponibil la restaurant.
+Pentru a realiza aceste operatii CRUD pe baza de date am scris 2 routere, fiecare cu cate 4 metode: 1 de tip GET, 1 de tip POST, 1 de tip PUT si 1 de tip DELETE.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Records.js:					      Orders.js:						
+Metodele HTTP din API-ul pentru comunicarea cu baza de date
+Pentru Meniul disponibil al restaurantului:
+Metoda Get Menu nu primeste niciun parametru sau body si intoarce meniul de pizza 
+salvat in baza de date.
+Metoda Add a pizza in the Menu primeste prin intermediul body-ului 3 informatii: nume, marime si link-ul catre o imagine reprezentativa, iar pe baza acestora creaza un nou document pe care il adauga in colectia din baza de date.
+Metoda Update Pizza  primeste ca parametrul id-ul unui element din meniu care va fi modificat in colectia din baza de date.
+Metoda Delete Pizza  primeste ca parametrul id-ul unui element din meniu care va fi sters din colectia din baza de date.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Pentru comenzile clientului:
+Metoda Get Orders nu primeste niciun parametru sau body si intoarce comenzile
+salvate in baza de date.
+Metoda Add Order primeste prin intermediul body-ului 4 informatii: nume, marime, cantitatea dorita si informatiile de contact ale clientului, iar pe baza acestora creaza un nou document pe care il adauga in colectia din baza de date.
+Metoda Update Order primeste ca parametrul id-ul unui element din comanda care va fi modificat în colecția din baza de date.
+Metoda Delete Order primeste ca parametrul id-ul unei comenzi care va fi ștearsă din colecția din baza de date.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Autentificare și autorizare servicii utilizate
+Conexiunea si utilizarea bazei de date in cloud MongoDB are nevoie de o cheie unica generata (NEXT_ATLAS_URI) la crearea bazei de date in MongoDb Atlas ce este alcatuita din username si parola furnizata care este ascunsa in imaginea de mai jos, dar necesita totodata si numele bazei de date (NEXT_ATLAS_DATABASE). Aceste informatii sunt salvate in folderul .env din cadrul front-end-ului.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Colectiile orders si records din baza de date CloudComputing:
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Capturi ecran aplicație
+Pagina initiala
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+Vizualizarea meniului
+
+
+
+
+Plasarea unei comenzi
+
+
+Vizualizarea comenzilor
+
+
+
+Referinte
+
+Link-ul public catre aplicatie: https://cc-pizza-5prlmic23-andraroxana19.vercel.app
+Link demo aplicatie YouTube: https://youtu.be/WEgF2woFtRo
+
