@@ -1,4 +1,4 @@
-Introducere
+### Introducere
 
 Aplicația „Pizza Menu App” pune la dispozitie clientilor unui restaurant de pizza meniul disponibil si posibilitatea de a comanda una chiar la ei acasa, totodata de a si vizualiza comenzile sale.
 Informațiile furnizate in aplicație se preiau din cadrul unei baze de date remote care functioneaza  in cloud, MONGODB.
@@ -6,7 +6,7 @@ Pentru realizarea Backend-ului am folosit NextJS cu ajutorul unui server express
 Aplicatia finala a fost publicata cu ajutorul unei platforme in cloud, VERCEL.
 Descriere tehnologii cloud folosite
 
-MONGODB API: 
+##MONGODB API: 
 Baza de date este salvată în cloud și pentru aceasta am ales MONGODB. 
 Cu ajutorul ei clienții pot adăuga pizza în comanda lor într-o colecție pe care o putem accesa ulterior pentru a obține detaliile comenzilor. Este facilitata, de asemenea ștergerea unei comenzi din baza de date în cazul în care clienților dorește asta.
 Aceleași posibilități sunt furnizate și pentru vizualizarea meniului disponibil la restaurant.
@@ -14,14 +14,14 @@ Pentru a realiza aceste operatii CRUD pe baza de date am scris 2 routere, fiecar
 
 Records.js:					      Orders.js:						
 Metodele HTTP din API-ul pentru comunicarea cu baza de date
-Pentru Meniul disponibil al restaurantului:
+#Pentru Meniul disponibil al restaurantului:
 Metoda Get Menu nu primeste niciun parametru sau body si intoarce meniul de pizza 
 salvat in baza de date.
 Metoda Add a pizza in the Menu primeste prin intermediul body-ului 3 informatii: nume, marime si link-ul catre o imagine reprezentativa, iar pe baza acestora creaza un nou document pe care il adauga in colectia din baza de date.
 Metoda Update Pizza  primeste ca parametrul id-ul unui element din meniu care va fi modificat in colectia din baza de date.
 Metoda Delete Pizza  primeste ca parametrul id-ul unui element din meniu care va fi sters din colectia din baza de date.
 
-Pentru comenzile clientului:
+#Pentru comenzile clientului:
 Metoda Get Orders nu primeste niciun parametru sau body si intoarce comenzile
 salvate in baza de date.
 Metoda Add Order primeste prin intermediul body-ului 4 informatii: nume, marime, cantitatea dorita si informatiile de contact ale clientului, iar pe baza acestora creaza un nou document pe care il adauga in colectia din baza de date.
