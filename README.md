@@ -4,15 +4,16 @@ Aplicația „Pizza Menu App” pune la dispozitie clientilor unui restaurant de
 Informațiile furnizate in aplicație se preiau din cadrul unei baze de date remote care functioneaza  in cloud, MONGODB.
 Pentru realizarea Backend-ului am folosit NextJS cu ajutorul unui server express împreuna cu un API cu care sunt realizate operațiile CRUD pe aceasta  baza de date, iar front-end-ul este realizat in React.
 Aplicatia finala a fost publicata cu ajutorul unei platforme in cloud, VERCEL.
-Descriere tehnologii cloud folosite
+### Descriere tehnologii cloud folosite
 
-##MONGODB API: 
+### MONGODB API: 
 Baza de date este salvată în cloud și pentru aceasta am ales MONGODB. 
 Cu ajutorul ei clienții pot adăuga pizza în comanda lor într-o colecție pe care o putem accesa ulterior pentru a obține detaliile comenzilor. Este facilitata, de asemenea ștergerea unei comenzi din baza de date în cazul în care clienților dorește asta.
 Aceleași posibilități sunt furnizate și pentru vizualizarea meniului disponibil la restaurant.
 Pentru a realiza aceste operatii CRUD pe baza de date am scris 2 routere, fiecare cu cate 4 metode: 1 de tip GET, 1 de tip POST, 1 de tip PUT si 1 de tip DELETE.
 
-Records.js:					      Orders.js:						
+Records.js:					      Orders.js:			
+
 Metodele HTTP din API-ul pentru comunicarea cu baza de date
 #Pentru Meniul disponibil al restaurantului:
 Metoda Get Menu nu primeste niciun parametru sau body si intoarce meniul de pizza 
